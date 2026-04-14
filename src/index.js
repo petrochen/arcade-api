@@ -1,11 +1,12 @@
 // Arcade API — Cloudflare Worker + D1
 // Leaderboard and stats for Tetris, Pac-Man, Space Invaders
 
-const VALID_GAMES = ['tetris', 'pacman', 'space-invaders'];
+const VALID_GAMES = ['tetris', 'pacman', 'space-invaders', 'arkanoid'];
 const SCORE_LIMITS = {
   'tetris': 999999,
   'pacman': 999999,
-  'space-invaders': 99999
+  'space-invaders': 99999,
+  'arkanoid': 999999
 };
 const MIN_GAME_TIME_MS = 30000; // 30 seconds minimum
 const MAX_TOKEN_AGE_MS = 86400000; // 24 hours
