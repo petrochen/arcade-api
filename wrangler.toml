@@ -1,0 +1,12 @@
+name = "arcade-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "arcade-api.petrochenko.info/*", zone_name = "petrochenko.info" }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "arcade-scores"
+database_id = "b12fa89f-b599-45e5-97ea-45b85618484d"
