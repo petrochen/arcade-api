@@ -60,7 +60,7 @@ export default {
 
       // Validate player: 1-6 uppercase letters
       if (!player || typeof player !== 'string') return err(400, 'player required');
-      const cleanPlayer = player.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 6);
+      const cleanPlayer = player.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
       if (cleanPlayer.length < 1) return err(400, 'player must be 1-6 letters');
 
       // Validate score
@@ -128,7 +128,7 @@ export default {
     }
 
     // ── GET /api/stats/:game/:player ─────────────────────────────────
-    const statsMatch = path.match(/^\/api\/stats\/([\w-]+)\/([A-Za-z]{1,6})$/);
+    const statsMatch = path.match(/^\/api\/stats\/([\w-]+)\/([A-Za-z0-9]{1,6})$/);
     if (statsMatch && request.method === 'GET') {
       const game = statsMatch[1];
       const player = statsMatch[2].toUpperCase();
